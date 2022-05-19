@@ -82,7 +82,7 @@ mod_doc() ->
           ?T("This is an example module.")}.
 
 %% Implementation of handlers
--spec offline_message_hook({any(), message()}) -> {any(), message()}.
+-spec create_message({any(), message()}) -> {any(), message()}.
 create_message({_Action, #message{from = From, to = To, type = Type, body = Body, id = MessageId} = Packet} = Acc) ->
     LServer = To#jid.lserver,
     FromJid = io_lib:format("~s@~s", [From#jid.luser, From#jid.lserver]),
