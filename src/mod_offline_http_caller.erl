@@ -20,7 +20,7 @@
 %%%
 %%%----------------------------------------------------------------------
 
--module(mod_tinvito_offline).
+-module(mod_offline_http_caller).
 
 -behaviour(gen_mod).
 
