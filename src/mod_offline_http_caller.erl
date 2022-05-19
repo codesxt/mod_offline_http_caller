@@ -98,7 +98,7 @@ create_message({_Action, #message{from = From, to = To, type = Type, body = Body
 
         [{text, _, BodyText}] = Body,
 
-		Headers = [{"X-EJABBERD-HTTP-SECRET", SECRET}],
+        Headers = [{"X-EJABBERD-HTTP-SECRET", SECRET}],
         ContentType = "application/json",
         JsonBody = "{"
             ++ "\"from\": \""
@@ -112,7 +112,7 @@ create_message({_Action, #message{from = From, to = To, type = Type, body = Body
         HTTPOptions = [],
         Options = [],
         httpc:request(post, {URL, Headers, ContentType, list_to_binary(JsonBody)}, HTTPOptions, Options);
-	true ->
+    true ->
         % Do nothing if message is not chat
         ok
     end.
